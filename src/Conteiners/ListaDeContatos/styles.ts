@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const Container = styled.main`
+  padding: 0 40px;
+  height: 80vh;
+  overflow-y: scroll;
+`
+
 export const Campo = styled.input`
   border-radius: 8px;
   padding: 8px;
@@ -14,7 +20,7 @@ export const Campo = styled.input`
 export const ListaContato = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 4px;
+  gap: 2px;
   text-align: center;
 
   h2 {
@@ -23,13 +29,8 @@ export const ListaContato = styled.div`
     font-weight: bold;
     border-bottom: 2px solid #000;
   }
-
-  p {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    font-size: 18px;
-    padding: 8px;
-  }
 `
-export const logo = styled.img`
-  height: 18px;
+
+export const button = styled.button`
+  cursor: pointer;
 `
