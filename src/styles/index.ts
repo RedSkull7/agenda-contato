@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 const EstiloGlobal = createGlobalStyle`
 * {
@@ -7,6 +7,13 @@ const EstiloGlobal = createGlobalStyle`
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
 }
+`
+
+export const Container = styled.div`
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px;
 `
 
 export default EstiloGlobal
