@@ -1,14 +1,15 @@
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
 import * as S from './styles'
 import edicao from '../../imagens/edicao.png'
-import { useState } from 'react'
+import { remover } from '../../store/reducers/contato'
+import Contato from '../../models/Contato'
 
-type Props = {
-  nome: string
-  numero: string
-  email: string
-}
+type Props = Contato
 
-const Contatos = ({ nome, numero, email }: Props) => {
+const Contatos = ({ nome, numero, email, id }: Props) => {
+  const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
 
   return (
@@ -29,7 +30,9 @@ const Contatos = ({ nome, numero, email }: Props) => {
             <S.Botao onClick={() => setEstaEditando(true)}>
               <S.logo src={edicao} />
             </S.Botao>
-            <S.BotaoCancelarRemover>Remover</S.BotaoCancelarRemover>
+            <S.BotaoCancelarRemover onClick={() => dispatch(remover(id))}>
+              Remover
+            </S.BotaoCancelarRemover>
           </>
         )}
       </S.BarraAcao>
