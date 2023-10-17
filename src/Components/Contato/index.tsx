@@ -1,18 +1,40 @@
 import * as S from './styles'
 import edicao from '../../imagens/edicao.png'
+import { useState } from 'react'
 
-const Contatos = () => (
-  <>
-    <S.Nome>Icaro Natã Fadel</S.Nome>
-    <S.Numero>+55 (11) 94926-8848</S.Numero>
-    <S.Email>icaro.nata147@gmail.com</S.Email>
-    <S.BarraAcao>
-      <S.Botao>
-        <S.logo src={edicao} />
-      </S.Botao>
-      <S.Botao>Remover</S.Botao>
-    </S.BarraAcao>
-  </>
-)
+type Props = {
+  nome: string
+  numero: string
+  email: string
+}
+
+const Contatos = ({ nome, numero, email }: Props) => {
+  const [estaEditando, setEstaEditando] = useState(false)
+
+  return (
+    <>
+      <S.Nome>{nome}</S.Nome>
+      <S.Numero>{numero}</S.Numero>
+      <S.Email>{email}</S.Email>
+      <S.BarraAcao>
+        {estaEditando ? (
+          <>
+            <S.BotaoSalvar>Salvar</S.BotaoSalvar>
+            <S.BotaoCancelarRemover onClick={() => setEstaEditando(false)}>
+              Cancelar
+            </S.BotaoCancelarRemover>
+          </>
+        ) : (
+          <>
+            <S.Botao onClick={() => setEstaEditando(true)}>
+              <S.logo src={edicao} />
+            </S.Botao>
+            <S.BotaoCancelarRemover>Remover</S.BotaoCancelarRemover>
+          </>
+        )}
+      </S.BarraAcao>
+    </>
+  )
+}
 
 export default Contatos

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
 
 export const Nome = styled.p`
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -28,4 +29,10 @@ export const Botao = styled.button`
   border: none;
   margin-left: 8px;
   width: 50%;
+`
+export const BotaoSalvar = styled(Botao)`
+  background-color: ${variaveis.verde};
+`
+export const BotaoCancelarRemover = styled(Botao)`
+  background-color: ${variaveis.vermelho};
 `
