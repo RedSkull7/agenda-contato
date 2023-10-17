@@ -6,17 +6,28 @@ export const Nome = styled.p`
   font-size: 18px;
   padding: 8px;
 `
+export const NomeInput = styled.input`
+  font-size: 18px;
+`
+
 export const Numero = styled.p`
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 18px;
   padding: 8px;
 `
+export const NumeroInput = styled.input`
+  font-size: 18px;
+`
+
 export const Email = styled.p`
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 18px;
   padding: 8px;
 `
-export const logo = styled.img`
+export const EmailInput = styled.input`
+  font-size: 18px;
+`
+export const Logo = styled.img`
   height: 18px;
 `
 export const BarraAcao = styled.div`
