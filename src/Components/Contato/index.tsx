@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import * as S from './styles'
 import edicao from '../../imagens/edicao.png'
-import { remover } from '../../store/reducers/contato'
+import { remover, editar } from '../../store/reducers/contato'
 import Contato from '../../models/Contato'
 
 type Props = Contato
@@ -77,7 +77,21 @@ const Contatos = ({
       <S.BarraAcao>
         {estaEditando ? (
           <>
-            <S.BotaoSalvar>Salvar</S.BotaoSalvar>
+            <S.BotaoSalvar
+              onClick={() => {
+                dispatch(
+                  editar({
+                    nome,
+                    numero,
+                    email,
+                    id
+                  })
+                )
+                setEstaEditando(false)
+              }}
+            >
+              Salvar
+            </S.BotaoSalvar>
             <S.BotaoCancelarRemover onClick={cancelarEdicao}>
               Cancelar
             </S.BotaoCancelarRemover>
