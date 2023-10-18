@@ -4,6 +4,7 @@ import Contatos from '../../Components/Contato'
 import * as S from './styles'
 import { RootReducer } from '../../store'
 import { alteraTermo } from '../../store/reducers/filtros'
+import { MainContainer, Campo } from '../../styles/index'
 
 const CampoDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contato)
@@ -18,8 +19,8 @@ const CampoDeContatos = () => {
   }
 
   return (
-    <S.Container>
-      <S.Campo
+    <MainContainer>
+      <Campo
         type="text"
         placeholder="Buscar"
         value={termo}
@@ -41,7 +42,7 @@ const CampoDeContatos = () => {
           />
         ))}
       </S.ListaContato>
-    </S.Container>
+    </MainContainer>
   )
 }
 

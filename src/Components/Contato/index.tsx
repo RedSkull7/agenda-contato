@@ -5,6 +5,7 @@ import * as S from './styles'
 import edicao from '../../imagens/edicao.png'
 import { remover, editar } from '../../store/reducers/contato'
 import Contato from '../../models/Contato'
+import { BotaoSalvar } from '../../styles'
 
 type Props = Contato
 
@@ -77,7 +78,7 @@ const Contatos = ({
       <S.BarraAcao>
         {estaEditando ? (
           <>
-            <S.BotaoSalvar
+            <BotaoSalvar
               onClick={() => {
                 dispatch(
                   editar({
@@ -91,7 +92,7 @@ const Contatos = ({
               }}
             >
               Salvar
-            </S.BotaoSalvar>
+            </BotaoSalvar>
             <S.BotaoCancelarRemover onClick={cancelarEdicao}>
               Cancelar
             </S.BotaoCancelarRemover>

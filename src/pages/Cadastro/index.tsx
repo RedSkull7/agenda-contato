@@ -1,10 +1,11 @@
+import { Circulo } from '../../Components/BotaoAdd/styles'
+import Formulario from '../../Conteiners/Formulario'
+
 const Cadastro = () => (
-  <form>
-    <input type="text" placeholder="Nome completo" />
-    <input type="tel" placeholder="Telefone" />
-    <input type="email" placeholder="E-mail" />
-    <button type="submit">Cadastrar</button>
-  </form>
+  <>
+    <Circulo to="/">←</Circulo>
+    <Formulario />
+  </>
 )
 
 export default Cadastro
