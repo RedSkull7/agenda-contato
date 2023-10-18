@@ -1,5 +1,7 @@
 import { useState, FormEvent } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
 import { MainContainer, Campo, BotaoSalvar } from '../../styles/index'
 import Header from '../Header'
 import { Form } from './styles'
@@ -8,14 +10,16 @@ import { cadastrar } from '../../store/reducers/contato'
 
 const Formulario = () => {
   const dispacth = useDispatch()
+  const navigate = useNavigate()
   const [nome, setNome] = useState('')
   const [numero, setNumero] = useState('')
   const [email, setEmail] = useState('')
 
   const cadastrarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
-    const tarefaParaAdicionar = new Contato(nome, numero, email, 9)
-    dispacth(cadastrar(tarefaParaAdicionar))
+
+    dispacth(cadastrar({ nome, numero, email }))
+    navigate('/')
   }
 
   return (
