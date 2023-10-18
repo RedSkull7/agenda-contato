@@ -11,19 +11,19 @@ const initialState: ContatosState = {
       id: 1,
       nome: 'Icaro Natã Fadel',
       numero: '(11) 94926-8848',
-      email: 'icaro.nata147@gmial.com'
+      email: 'icaro.nata147@gmail.com'
     },
     {
       id: 2,
       nome: 'Ana Karolina',
-      numero: '(11) 94926-8848',
-      email: 'icaro.nata147@gmial.com'
+      numero: '(11) 97721-2959',
+      email: ''
     },
     {
       id: 3,
       nome: 'Vitor G. Souza',
-      numero: '(11) 94926-8848',
-      email: 'icaro.nata147@gmial.com'
+      numero: '(11) 94052-4458',
+      email: 'vitor.souza@ibllogistica.com.br'
     }
   ]
 }
