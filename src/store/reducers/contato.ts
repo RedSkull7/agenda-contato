@@ -45,10 +45,35 @@ const contatoSlice = createSlice({
       if (IndexDoContato >= 0) {
         state.itens[IndexDoContato] = action.payload
       }
+    },
+    cadastrar: (state, action: PayloadAction<Contato>) => {
+      const contatosFiltrados = state.itens.filter((contato) => {
+        const NomeJaExiste = state.itens.find(
+          (contato) =>
+            contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+        )
+        const NumeroJaExiste = state.itens.find(
+          (contato) =>
+            contato.numero.toLowerCase() === action.payload.numero.toLowerCase()
+        )
+        const EmailJaExiste = state.itens.find(
+          (contato) =>
+            contato.email.toLowerCase() === action.payload.email.toLowerCase()
+        )
+
+        return NomeJaExiste || NumeroJaExiste || EmailJaExiste
+      })
+      const ContatoJaExiste = contatosFiltrados.length > 0
+
+      if (ContatoJaExiste) {
+        alert('Contato já existente')
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const { remover, editar } = contatoSlice.actions
+export const { remover, editar, cadastrar } = contatoSlice.actions
 
 export default contatoSlice.reducer
