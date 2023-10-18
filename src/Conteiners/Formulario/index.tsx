@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import { MainContainer, Campo, BotaoSalvar } from '../../styles/index'
 import Header from '../Header'
 import { Form } from './styles'
-import Contato from '../../models/Contato'
 import { cadastrar } from '../../store/reducers/contato'
 
 const Formulario = () => {
